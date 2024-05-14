@@ -1,11 +1,10 @@
 import axios from 'axios';
-import { oneProductRoute } from '../utils/apiRoutes';
+import { host, oneProductRoute } from '../utils/apiRoutes';
 
-const URL='http://localhost:8080';
 
 export const authnaticationSignup=async(data)=>{
     try {
-       return await axios.post(`${URL}/signup`,data)
+       return await axios.post(`${host}/signup`,data)
     } catch (error) {
         console.log(error.message);
     }

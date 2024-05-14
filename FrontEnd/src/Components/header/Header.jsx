@@ -76,7 +76,7 @@ const [open,setOpen]=useState(false);
           <HeaderBar>
                   <Toolbar style={{minHeight:55}}>
                     <MenuButton color='inherit' onClick={handleOpen}>
-                        <MenuIcon></MenuIcon>
+                        <MenuIcon/>
                     </MenuButton>
 
           <Drawer open={open}  onClose={handleClose}>{list()}</Drawer>

@@ -10,6 +10,7 @@ import { useSelector } from 'react-redux';
 
 const Wrapper=styled(Box)(({theme})=>({
 
+  
   display:'flex',
   margin:'0 3% 0 auto',
   '& > *' :{
@@ -17,10 +18,10 @@ const Wrapper=styled(Box)(({theme})=>({
     fontSize:'16px',
     alignItems:'center',
   },
-  // [theme.breakpoints.down('md')]:{
-  //   display:'block',
-  // }
-}));
+  [theme.breakpoints.down('sm')]:{
+    display:'block',
+  }
+  }))
 
 const LoginButton=styled(Button)`
 color:#2874f0;
@@ -38,9 +39,9 @@ const BoxContainer=styled(Link)(({ theme })=>({
   display:'flex',
   textDecoration: 'none',
   color:'inherit',
-  // [theme.breakpoints.down('md')]:{
-    // display:'block',
-  // }
+  [theme.breakpoints.down('md')]:{
+    display:'block',
+  }
 }))
 const CustomeButton = () => {
 

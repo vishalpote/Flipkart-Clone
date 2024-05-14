@@ -2,11 +2,11 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 
 dotenv.config();
-const database = process.env.DATABASE;
+const database = process.env.MONGODB_URI;
 export const Connection=async()=>{
-      const Url='mongodb+srv://vishal:vishalpote>@ecommerce.0m0yohg.mongodb.net/?retryWrites=true&w=majority'
+     
       try {
-        await mongoose.connect("mongodb://localhost/flipkart");    
+        await mongoose.connect(database);    
         console.log("database connect Succssfully...")
       } catch (error) {
             console.log(error);
