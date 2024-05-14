@@ -8,15 +8,13 @@ import { useDispatch, useSelector } from "react-redux";
 import Slide from "./Slide";
 import MidSlider from "./MidSlider";
 import MideSection from "./MideSection";
-// import MidSlider from './MidSlider';
-
 const Container = styled(Box)`
   background: #f2f2f2;
   padding: 10px;
 `;
 const Home = () => {
   const getproducts = useSelector((state) => state.getProducts);
-  const products = getproducts.products.product;
+  const products = getproducts.products;
   console.log(getproducts);
 
   const dispatch = useDispatch();
@@ -54,11 +52,7 @@ const Home = () => {
           timer={false}
           title=" Season's Top Picks"
         ></Slide>
-        <Slide
-          products={products}
-          timer={false}
-          title=" Suggested Items"
-        ></Slide>
+        
       </Container>
     </>
   );

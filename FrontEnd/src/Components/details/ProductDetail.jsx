@@ -1,31 +1,30 @@
-import { Box, styled, Table, TableBody, TableCell, TableRow, Typography } from '@mui/material'
+import { Box, styled, Table, TableBody, TableCell, TableRow, Typography,Badge } from '@mui/material'
 import LocalOfferIcon from '@mui/icons-material/LocalOffer';
 
 
-const Smalltext = styled(Box)`
-    font-size:14px;
-    vertical-align:baseline;
-    & >p{
-        font-size:14px;
-        margin-top:10px;
-    }
-`;
-
-const Badge = styled(LocalOfferIcon)`
-    margin-right:10px;
-    color:#00cc00;
-    font-size:15px;
-`;
-
-const Columntext=styled(TableRow)`
-    font-size:14px;
-    vertical-align:baseline;
-    & > td{
-        font-size:14px;
-        margin-top:10px;
-        border:none;
+const SmallText = styled(Box)`
+    font-size: 14px;
+    vertical-align: baseline;
+    & > p {
+        font-size: 14px;
+        margin-top: 10px;
     }
 `
+
+const Columntext = styled(TableRow)`
+    font-size: 14px;
+    vertical-align: baseline;
+    & > td {
+        font-size: 14px;
+        margin-top: 10px;
+    }
+`
+
+const StyledBadge = styled(LocalOfferIcon)`
+    margin-right: 10px;
+    color: #00CC00;
+    font-size: 15px;
+`;
 
 const ProductDetail = ({ product }) => {
     const fassured = 'https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/fa_62673a.png';
@@ -35,24 +34,26 @@ const ProductDetail = ({ product }) => {
     const date=new Date(new Date().getTime()+(5*24*60*60*1000));
     return (
         <>
-            <Typography>{product.title.longTitle}</Typography>
-            <Typography style={{ marginTop: 5, color: '#878787', fontSize: 14 }}>8 rating && 1 Review
-                <Box component="span"><img src={fassured} alt="" style={{ width: 77, marginLeft: 20 }} /></Box>
-            </Typography>
-            <Typography>
-                <Box component="span" style={{ fontSize: 28 }}>₹{product.price.cost}</Box>&nbsp;&nbsp;&nbsp;
-                <Box component="span" style={{ color: '#878787' }}><strike>₹{product.price.mrp}</strike></Box>&nbsp;&nbsp;&nbsp;
-                <Box component="span" style={{ color: 'green' }}>{product.price.discount}</Box>
-            </Typography>
-            <Typography>Availble Offers</Typography>
-            <Smalltext>
-                <Typography><Badge></Badge>Get extra 20% off upto ₹50 on 1 item(s) T&C </Typography>
-                <Typography><Badge></Badge>Get extra 13% off (price inclusive of discount) T&C </Typography>
-                <Typography><Badge></Badge>Get extra 10% off on HSBC Bank Credit Card Transactions, up to ₹1,250 on orders of ₹15,000 and aboveT&C </Typography>
-                <Typography><Badge></Badge>Get extra 27% off (price inclusive of cashback/coupon)T&C </Typography>
-                <Typography><Badge></Badge>No Cost EMI* with Flipkart Pay Later EMIT&C </Typography>
-                <Typography><Badge></Badge>Sign-up for Flipkart Pay Later & get free Times Prime Benefits worth ₹20,000*Know More </Typography>
-            </Smalltext>
+            <Box style={{marginLeft:30}}>
+                <Typography>{product.title.longTitle}</Typography>
+                <Typography style={{ marginTop: 5, color: '#878787', fontSize: 14 }}>8 rating && 1 Review
+                    <Box component="span"><img src={fassured} alt="" style={{ width: 77, marginLeft: 20 }} /></Box>
+                </Typography>
+                <Typography>
+                    <Box component="span" style={{ fontSize: 28 }}>₹{product.price.cost}</Box>&nbsp;&nbsp;&nbsp;
+                    <Box component="span" style={{ color: '#878787' }}><strike>₹{product.price.mrp}</strike></Box>&nbsp;&nbsp;&nbsp;
+                    <Box component="span" style={{ color: 'green' }}>{product.price.discount}</Box>
+                </Typography>
+                <Typography>Availble Offers</Typography>
+                <SmallText>
+                    <Typography><StyledBadge></StyledBadge>Get extra 20% off upto ₹50 on 1 item(s) T&C </Typography>
+                    <Typography><StyledBadge></StyledBadge>Get extra 13% off (price inclusive of discount) T&C </Typography>
+                    <Typography><StyledBadge></StyledBadge>Get extra 10% off on HSBC Bank Credit Card Transactions, up to ₹1,250 on orders of ₹15,000 and aboveT&C </Typography>
+                    <Typography><StyledBadge></StyledBadge>Get extra 27% off (price inclusive of cashback/coupon)T&C </Typography>
+                    <Typography><StyledBadge></StyledBadge>No Cost EMI* with Flipkart Pay Later EMIT&C </Typography>
+                    <Typography><StyledBadge></StyledBadge>Sign-up for Flipkart Pay Later & get free Times Prime Benefits worth ₹20,000*Know More </Typography>
+                </SmallText>
+            </Box>
             <Table>
                 <TableBody>
                     <Columntext>

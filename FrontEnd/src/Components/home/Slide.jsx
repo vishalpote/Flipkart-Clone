@@ -105,7 +105,7 @@ const Slide = ({products,title,timer}) => {
                   containerClass="carousel-container"
               > 
                   {
-                      products.map((product) => (
+                      products.slice(0,7).map((product) => (
                           <>
                           <Link to={`product/${product._id}`} style={{textDecoration:'none'}}>
                               <Box textAlign="center" style={{padding:"20px 15px"}}>

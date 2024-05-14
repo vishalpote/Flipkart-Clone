@@ -14,6 +14,15 @@ export const cartReducers=(state={cartItems:[]},action)=>{
 
         case actionType.REMOVE_FROM_CART:
             return {...state,cartItems: state.cartItems.filter(product=>product._id!==action.payload)}
+
+        // case actionType.INCREMENT_QUANTITY:
+        //     return {
+        //         ...state,
+        //         cartItems:state.cartItems.map((item)=>{
+        //             item._id===action.payload ? {...item,quantity:item.quantity+1}
+        //             : item
+        //         })
+        //     }
         default:
             return state
      }

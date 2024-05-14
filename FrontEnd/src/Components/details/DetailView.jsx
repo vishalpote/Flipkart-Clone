@@ -8,22 +8,24 @@ import ProductDetail from "./ProductDetail";
 
 
 const Component = styled(Box)`
-  background:#f2f2f2;
-  matgin-top:55px;
-`
+    margin-top: 55px;
+    background: #F2F2F2;
+`;
 
-const Container = styled(Grid)(({theme})=>({
-  background:'#FFFFFF',
-  display:'flex',
-  [theme.breakpoints.down('md')]:{
-    margin:0,
+const Container = styled(Grid)(({ theme }) => ({
+  background: '#FFFFFF',
+  display: 'flex',
+  [theme.breakpoints.down('md')]: {
+    margin: 0
   }
 }))
 
-
-const Rightcontainer = styled(Grid)`
-  margin-top:55px;
-`
+const RightContainer = styled(Grid)`
+    margin-top: 50px;
+    & > p {
+        margin-top: 10px;
+    }
+`;
 
 const DetailView = () => {
   const dispatch = useDispatch();
@@ -49,9 +51,9 @@ const DetailView = () => {
             </Grid>
 
 
-              <Rightcontainer  item lg={8} md={8} sm={8} xs={12}>
+              <RightContainer  item lg={8} md={8} sm={8} xs={12}>
                 <ProductDetail  product={product}></ProductDetail>
-            </Rightcontainer>
+            </RightContainer>
           </Container>
         }
       </Component>

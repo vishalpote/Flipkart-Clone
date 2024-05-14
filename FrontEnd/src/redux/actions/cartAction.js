@@ -16,3 +16,7 @@ export const addTocart=(id,quantity)=>async(dispatch)=>{
 export const removeTocart=(id)=>(dispatch)=>{
     dispatch({type:actionType.REMOVE_FROM_CART,payload:id});
 }
+
+// export const incrementQuantity=(id,quantity)=>(dispatch)=>{
+//         dispatch({type:actionType.INCREMENT_QUANTITY,payload:{id,quantity}});
+// }

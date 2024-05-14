@@ -35,12 +35,13 @@ const CartItem = ({item}) => {
     const removeitemformcart=(id)=>{
         dispatch(removeTocart(id));
     }
+    console.log(item);
   return (
     <>
           <Component>
               <LeftComponent>
                 <img src={item.url} alt="product" style={{height:110,width:110}}/>
-                  <GroupedButton />
+                  <GroupedButton item={item} />
             </LeftComponent>    
             <Box style={{margin:20}}>
                 <Typography>{title.length >50 ?title.slice(0,40) + '...' :title}</Typography>

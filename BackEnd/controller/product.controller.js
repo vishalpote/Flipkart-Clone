@@ -8,7 +8,7 @@ export const productData=async(req,res)=>{
         if(!product){
             return res.status(404).json({message:"No Product Available..!!"});
         }
-        return res.status(200).json({message:"Product Deatils",product});
+        return res.status(200).json(product);
     } catch (error) {
         return res.status(500).json({message:"Internal Server Error..!!",error});
     }
